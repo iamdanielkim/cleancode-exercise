@@ -8,17 +8,21 @@ import java.util.*;
 public class AssetReport {
 
     private Map<String, BigDecimal> positions;
-    private BigDecimal allPositions;
     private Assessor assessor;
-    private Map<String, String> assetToGroup;
     private Map<String, BigDecimal> groupTotal;
     private Map m_hmRiskTable;
 
+    public AssetReport(Map<String, BigDecimal> positions, Assessor assessor, Map<String, BigDecimal> groupTotal) {
+        this.positions = positions;
+        this.assessor = assessor;
+        this.groupTotal = groupTotal;
+    }
+
     public void execute(RecordSet records, PrintWriter output) throws IOException {
-        allPositions = new BigDecimal("0.00");
-        assetToGroup = new HashMap<String, String>();
+        BigDecimal allPositions = new BigDecimal("0.00");
+        Map<String, String> assetToGroup = new HashMap<String, String>();
         for (int row = 0; row < records.getRowCount(); row++) {
-            BigDecimal pos = new BigDecimal(1);
+            BigDecimal pos;
             BigDecimal r = new BigDecimal("0.00");
             String issue = "";
             issue = records.getItem(row, "ISSUE_NAME");
@@ -82,3 +86,18 @@ public class AssetReport {
     }
 
 }
+
+interface Assessor {
+    BigDecimal getRiskCoefficient(String issue_family, BigDecimal term_two);
+}
+
+interface RecordSet {
+
+    public String getItem(int row, String issue_name);
+
+    public BigDecimal getDecimal(int row, String market_price);
+
+    public int getRowCount();
+}
+
+
