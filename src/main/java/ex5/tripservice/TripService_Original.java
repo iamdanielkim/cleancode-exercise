@@ -1,10 +1,10 @@
 package ex5.tripservice;
 
-import org.craftedsw.tripservicekata.exception.UserNotLoggedInException;
-import org.craftedsw.tripservicekata.trip.Trip;
-import org.craftedsw.tripservicekata.trip.TripDAO;
-import org.craftedsw.tripservicekata.user.User;
-import org.craftedsw.tripservicekata.user.UserSession;
+import ex5.tripservice.exception.UserNotLoggedInException;
+import ex5.tripservice.trip.Trip;
+import ex5.tripservice.trip.TripDAO;
+import ex5.tripservice.user.User;
+import ex5.tripservice.user.UserSession;
 
 import java.util.ArrayList;
 import java.util.List;

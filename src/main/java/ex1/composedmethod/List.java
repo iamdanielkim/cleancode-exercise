@@ -1,9 +1,10 @@
 package ex1.composedmethod;
 
-/**
- * Created by iamdanielkim on 15. 5. 15..
- */
 public class List {
+    private boolean readOnly;
+    private Object[] elements;
+    private int size;
+
     public void add(Object element) {
         if (!readOnly) {
             int newSize = size + 1;

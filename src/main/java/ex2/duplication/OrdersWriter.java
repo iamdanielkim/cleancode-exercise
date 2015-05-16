@@ -1,6 +1,14 @@
 package ex2.duplication;
 
+import ex2.duplication.Order;
+
 public class OrdersWriter {
+    private Orders orders;
+
+    public Orders getOrders() {
+        return orders;
+    }
+
     public String getContents() {
         StringBuffer contents = new StringBuffer();
         contents.append("<orders>");
@@ -38,6 +46,18 @@ public class OrdersWriter {
         }
         contents.append("</orders>");
         return contents.toString();
+    }
+
+    private int getSizeFor(Product product) {
+        return 0;
+    }
+
+    private String getColorFor(Product product) {
+        return null;
+    }
+
+    private long getCurrencyFor(Product product) {
+        return 0;
     }
 
 }

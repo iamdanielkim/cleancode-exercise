@@ -1,7 +1,7 @@
 package ex5.tripservice.trip;
 
-import org.craftedsw.tripservicekata.exception.CollaboratorCallException;
-import org.craftedsw.tripservicekata.user.User;
+import ex5.tripservice.exception.CollaboratorCallException;
+import ex5.tripservice.user.User;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package ex5.tripservice.user;
 
-import org.craftedsw.tripservicekata.trip.Trip;
+import ex5.tripservice.trip.Trip;
 
 import java.util.ArrayList;
 import java.util.List;

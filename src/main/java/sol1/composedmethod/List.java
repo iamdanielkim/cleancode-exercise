@@ -1,6 +1,10 @@
 package sol1.composedmethod;
 
 public class List {
+    private boolean readOnly;
+    private int size;
+    private Object[] elements;
+
     public void add(Object element) {
         if (readOnly)
             return;

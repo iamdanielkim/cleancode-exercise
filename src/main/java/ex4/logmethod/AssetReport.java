@@ -3,10 +3,16 @@ package ex4.logmethod;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 public class AssetReport {
+
+    private Map<String, BigDecimal> positions;
+    private BigDecimal allPositions;
+    private Assessor assessor;
+    private Map<String, String> assetToGroup;
+    private Map<String, BigDecimal> groupTotal;
+    private Map m_hmRiskTable;
 
     public void execute(RecordSet records, PrintWriter output) throws IOException {
         allPositions = new BigDecimal("0.00");
@@ -64,7 +70,7 @@ public class AssetReport {
                     BigDecimal p = positions.get(asset);
                     BigDecimal weight1 = p.multiply(new BigDecimal("100.00")).divide(position, 2, BigDecimal.ROUND_HALF_UP)
                             .setScale(2);
-                    output.write("weight='" + weight1 + "' risk='" + m_hmRiskTable.get(asset).toPlainString() + "'>\n");
+                    output.write("weight='" + weight1 + "' risk='" + m_hmRiskTable.get(asset) + "'>\n");
                     output.write("\t\t\t" + asset + "\n");
                     output.write("\t\t</asset>");
                     notFirstOne = true;
